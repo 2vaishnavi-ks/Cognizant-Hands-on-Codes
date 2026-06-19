@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contacts">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="welcomeBanner">
+            <h1>Welcome to Local Community Event Portal</h1>
+
+            <p class="highlight">Register now for exciting community events!</p>
+
+            <p>
+                Special offers
+                <span>First event registration is free !!!</span>
+            </p>
+        </div>
+
+        <section id="events">
+            <h2>Upcoming events !</h2>
+            <div class="eventCard">
+                <h3>Music Festival</h3>
+                <p>Date: 05-06-2026</p>
+                <p>Location: Pune</p>
+                <button>Register</button>
+            </div>
+
+            <div class="eventCard">
+                <h3>Kite Festival</h3>
+                <p>Date: 12-06-2026</p>
+                <p>Location: Mumbai</p>
+                <button>Register</button>
+            </div>
+
+            <div class="eventCard">
+                <h3>Rangoli Festival</h3>
+                <p>Date: 20-06-2026</p>
+                <p>Location: Bangalore</p>
+                <button>Register</button>
+            </div>
+        </section>
+
+        <section id="imageGallery">
+            <table>
+                <caption>Community event Gallery !!</caption>
+                <tr>
+                    <th>Row 1</th>
+                    <td><img src="kite.jpg" alt="kiteFestival" width="100px" height="100px"></td>
+                    <td><img src="music.jpg" alt="musicFestival" width="100px" height="100px"></td>
+                    <td><img src="rangoli.jpg" alt="rangoliFestival" width="100px" height="100px"></td>
+                </tr>
+                <tr>
+                    <th>Row 2</th>
+                    <td><img src=""></td>
+                    <td><img src=""></td>
+                    <td><img src=""></td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="registration">
+            <h2>Event Registration</h2>
+
+            <form id="registrationForm">
+                <label for="name">Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                    autofocus
+                >
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+                <br><br>
+
+                <label for="eventDate">Event Date:</label>
+                <input
+                    type="date"
+                    id="eventDate"
+                    name="eventDate"
+                    required
+                >
+                <br><br>
+
+                <label for="eventType">Event Type:</label>
+                <select id="eventType" name="eventType" required>
+                    <option value="">Select an Event</option>
+                    <option value="kiteFestival">Kite Festival</option>
+                    <option value="rangoliFestival">Rangoli Festival</option>
+                    <option value="musicFestival">Music Festival</option>
+                </select>
+                <br><br>
+
+                <label for="message">Message:</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    cols="40"
+                    placeholder="Enter your message"
+                ></textarea>
+                <br><br>
+
+                <button type="submit">Register</button>
+
+                <output id="confirmationMessage"></output>
+
+            </form>
+        </section>
+
+        <section id="feedback">
+
+            <h2>Event Feedback</h2>
+
+            <form>
+
+                <label for="phone">Phone Number:</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter phone number"
+                    onblur="validatePhone()"
+                >
+                <br><br>
+
+                <label for="eventFee">Select Event:</label>
+                <select id="eventFee" onchange="showFee()">
+                    <option value="">Choose Event</option>
+                    <option value="100">Kite Festival</option>
+                    <option value="200">Rangoli Festival</option>
+                    <option value="300">Music Festival</option>
+                </select>
+
+                <p id="feeDisplay"></p>
+
+                <br>
+
+                <label for="feedbackText">Feedback:</label>
+                <textarea
+                    id="feedbackText"
+                    rows="5"
+                    cols="40"
+                    onkeyup="countCharacters()"
+                    placeholder="Enter your feedback"
+                ></textarea>
+
+                <p>Characters Typed: <span id="charCount">0</span></p>
+
+                <br>
+
+                <button type="button" onclick="submitFeedback()">
+                    Submit Feedback
+                </button>
+
+            </form>
+
+            <br>
+
+            <img
+                id="eventImage"
+                src="event.jpg"
+                alt="Community Event"
+                width="300"
+                ondblclick="enlargeImage()"
+            >
+
+        </section>
+
+        <section id="videoInvite">
+
+            <h2>Event Promo Video</h2>
+
+            <video
+                id="promoVideo"
+                width="500"
+                controls
+                oncanplay="videoReady()"
+            >
+                <source src="promo.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+
+            <p id="videoMessage"></p>
+
+        </section>
+
+        <section id="location">
+
+            <h2>Find Nearby Events</h2>
+
+            <button id="findLocation">
+                Find Nearby Events
+            </button>
+
+            <p id="coordinates"></p>
+
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>
